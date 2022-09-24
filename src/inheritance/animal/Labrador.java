@@ -1,16 +1,13 @@
 package inheritance.animal;
 
-public class Dog extends Animal{
-    protected String name;
-
-    public Dog(String name, String color) {
-        super(color);
-        this.name = name;
+public class Labrador extends Dog{
+    public Labrador(String name, String color) {
+        super(name, color);
     }
 
     @Override
     public String toString() {
-        return "Dog{" +
+        return "Labrador{" +
                 "name='" + name + '\'' +
                 ", color='" + color + '\'' +
                 '}';
