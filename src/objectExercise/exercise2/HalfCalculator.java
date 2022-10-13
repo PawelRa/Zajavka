@@ -1,4 +1,4 @@
-package objectExercise;
+package objectExercise.exercise2;
 
 public class HalfCalculator implements Function{
     @Override

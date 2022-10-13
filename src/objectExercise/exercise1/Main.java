@@ -1,4 +1,6 @@
-package objectExercise;
+package objectExercise.exercise1;
+
+import objectExercise.exercise1.Book;
 
 import java.util.ArrayList;
 import java.util.Arrays;
