@@ -3,13 +3,26 @@ package garbage;
 public class Example {
     public static void main(String[] args) {
         Cat cat = new Cat("Zenek");
+        Cat cat2 = new Cat("Tomasz");
         Owner owner = new Owner(cat);
+        cat.setOwner(owner);
 //        cat = new Cat("Stefan");
 
         cat = null;
+        cat2 = null;
         owner = null;
+//        Runtime.getRuntime().gc();
+        Example example = new Example();
+        example.method();
         System.gc();
-        Runtime.getRuntime().gc();
+    }
+
+
+
+    private void method() {
+        Cat cat = new Cat("Rob");
+        System.out.println(cat);
+        method1();
     }
 
     private void method1() {

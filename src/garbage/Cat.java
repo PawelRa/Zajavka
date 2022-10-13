@@ -2,7 +2,7 @@ package garbage;
 
 public class Cat {
     public String name;
-private Owner owner;
+    private Owner owner;
 
     public Cat(String name) {
         this.name = name;
@@ -12,10 +12,19 @@ private Owner owner;
         this.name = name;
     }
 
+    public void setOwner(Owner owner) {
+        this.owner = owner;
+    }
+
     @Override
     public String toString() {
         return "Cat{" +
                 "name='" + name + '\'' +
                 '}';
+    }
+
+    @Override
+    protected void finalize() throws Throwable {
+        System.out.println("finalize called");
     }
 }
