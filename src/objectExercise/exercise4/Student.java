@@ -1,71 +1,35 @@
 package objectExercise.exercise4;
 
 import java.util.Objects;
+import java.util.Random;
 
-public class Student {
-    private int id;
-    private String name;
-    private String lastName;
-    private Exam exam;
-
-    public Student(int id, String name, String lastName, Exam exam) {
-        this.id = id;
-        this.name = name;
-        this.lastName = lastName;
-        this.exam = exam;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    public Exam getExam() {
-        return exam;
-    }
-
-    public void setExam(Exam exam) {
-        this.exam = exam;
+public class Student extends Person implements Examinated {
+    public Student(final String name, final String surname) {
+        super(name, surname);
+        System.out.println("Creating student: " + name + " " + surname);
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Student student = (Student) o;
-        return id == student.id && name.equals(student.name) && lastName.equals(student.lastName) && Objects.equals(exam, student.exam);
-    }
+    public void writeExam(final Exam exam) {
+        exam.setOwner(this);
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, name, lastName, exam);
+        Random rand = new Random();
+        Question[] questions = exam.getQuestions();
+
+        for (Question question : questions) {
+            int randomAnswerIndex = rand.nextInt(question.getPossibleAnswersSize());
+            System.out.println("Student: " + getName() + " " + getSurname()
+                    + " answering question: " + question.getContent()
+                    + ", possible answers: " + question.getPossibleAnswers()
+                    + ", answered: " + question.getPossibleAnswer(randomAnswerIndex)
+                    + ", index:[" + randomAnswerIndex + "]"
+            );
+            question.answer(randomAnswerIndex);
+        }
     }
 
     @Override
     public String toString() {
-        return "Student{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", lastName='" + lastName + '\'' +
-                '}';
+        return "Student: " + getName() + " " + getSurname();
     }
 }
