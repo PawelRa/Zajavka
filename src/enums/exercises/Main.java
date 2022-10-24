@@ -6,8 +6,8 @@ public class Main {
 //        for (Day day : days) {
 //            System.out.println(day + " Is working day?: " + day.isWorkingDay() + " Is weekend?: " + day.isWeekend());
 //        }
-        exercise1();
-        System.out.println("-----------------------");
+//        exercise1();
+//        System.out.println("-----------------------");
         exercise2();
     }
 
@@ -20,5 +20,17 @@ public class Main {
     }
 
     private static void exercise2() {
+        Dance hiphop = Dance.HIPHOP;
+        System.out.println(hiphop + ": possible hours: "
+                + hiphop.getHours() + ", days: "
+                + hiphop.getDays() + ", alternative: "
+                + hiphop.getAlternative()
+        );
+        Dance irish = Dance.IRISH;
+        System.out.println(irish + ": possible hours: "
+                + irish.getHours() + ", days: "
+                + irish.getDays() + ", alternative: "
+                + irish.getAlternative()
+        );
     }
 }
