@@ -32,6 +32,14 @@ public class House {
         System.out.println("Walls built");
     }
 
+    @Override
+    public String toString() {
+        return "House{" +
+                "area=" + area +
+                ", address='" + address + '\'' +
+                '}';
+    }
+
     public double getArea() {
         return area;
     }
