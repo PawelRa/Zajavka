@@ -21,5 +21,7 @@ public class StaticExamples {
 //        Dog.staticExample();
         System.out.println(dog1.staticExample());
         System.out.println(Dog.staticExample()); //odwołanie do metody statycznej przez klasę
+        System.out.println("----------------");
+        System.out.println("Dog number of legs: " + Dog.NUMBER_OF_LEGS);
     }
 }
