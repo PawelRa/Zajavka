@@ -8,11 +8,9 @@ public class Main {
         System.out.println("-----------------");
         exercise3();
         System.out.println("-----------------");
-        exercise4();
+        exercise5();
     }
 
-    private static void exercise4() {
-    }
 
     private static void exercise1() {
         String globalConstant = GLOBAL_CONSTANT;
@@ -40,4 +38,14 @@ public class Main {
         System.out.println(child.getName());
         System.out.println(child.getClassName());
     }
+
+    private static void exercise5() {
+        IParent iParent = new AnotherChild();
+        AnotherChild anotherChild = new AnotherChild();
+        System.out.println(iParent.getName());
+//        System.out.println(iParent.getClassName());
+        System.out.println(anotherChild.getName());
+        System.out.println(anotherChild.getClassName());
+    }
+
 }
