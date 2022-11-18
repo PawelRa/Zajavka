@@ -1,5 +1,7 @@
 package Exceptions;
 
+import java.util.Arrays;
+
 public class ExceptionExamples {
     public static void main(String[] args) {
 //        String variable = null;
@@ -29,9 +31,17 @@ public class ExceptionExamples {
 //        }
         try {
             printSomething1("ThRow");
-        } catch (Exception e) {
+            // przy multucatch idziemy od szczegółu do ogółu
+        } catch (MySubSubException | ArrayIndexOutOfBoundsException e) { //przy wyjątkach można stosować lub
 //            System.out.println("Exception was thrown: " + e.getMessage());
-            e.printStackTrace();
+//            e.printStackTrace();
+            System.out.println("MySubSubException cought: " + Arrays.toString(e.getStackTrace()));
+        } catch (MySubException e) {
+            System.out.println("MySubException cought: " + Arrays.toString(e.getStackTrace()));
+        } catch (MyException e) {
+            System.out.println("MyException cought: " + Arrays.toString(e.getStackTrace()));
+        } catch (Exception e) {
+            System.out.println("My cought: " + Arrays.toString(e.getStackTrace()));
         }
     }
 
@@ -58,7 +68,7 @@ public class ExceptionExamples {
         try {
             printSomething3(input);
         } catch (MyException e) {
-            throw new MyOtherException("My other exception message, e");
+            throw new MySubException("My other exception message, e");
         }
     }
 
