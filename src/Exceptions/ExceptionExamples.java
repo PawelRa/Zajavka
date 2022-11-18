@@ -1,7 +1,5 @@
 package Exceptions;
 
-import java.util.Arrays;
-
 public class ExceptionExamples {
     public static void main(String[] args) {
 //        String variable = null;
@@ -29,20 +27,23 @@ public class ExceptionExamples {
 //            System.out.println("Exception was thrown: " + e.getMessage());
 //            e.printStackTrace();
 //        }
-        try {
-            printSomething1("ThRow");
-            // przy multucatch idziemy od szczegółu do ogółu
-        } catch (MySubSubException | ArrayIndexOutOfBoundsException e) { //przy wyjątkach można stosować lub
-//            System.out.println("Exception was thrown: " + e.getMessage());
-//            e.printStackTrace();
-            System.out.println("MySubSubException cought: " + Arrays.toString(e.getStackTrace()));
-        } catch (MySubException e) {
-            System.out.println("MySubException cought: " + Arrays.toString(e.getStackTrace()));
-        } catch (MyException e) {
-            System.out.println("MyException cought: " + Arrays.toString(e.getStackTrace()));
-        } catch (Exception e) {
-            System.out.println("My cought: " + Arrays.toString(e.getStackTrace()));
-        }
+//        try {
+//            printSomething1("ThRow");
+//            // przy multucatch idziemy od szczegółu do ogółu
+//        } catch (MySubSubException | ArrayIndexOutOfBoundsException e) { //przy wyjątkach można stosować lub
+////            System.out.println("Exception was thrown: " + e.getMessage());
+////            e.printStackTrace();
+//            System.out.println("MySubSubException cought: " + Arrays.toString(e.getStackTrace()));
+//        } catch (MySubException e) {
+//            System.out.println("MySubException cought: " + Arrays.toString(e.getStackTrace()));
+//        } catch (MyException e) {
+//            System.out.println("MyException cought: " + Arrays.toString(e.getStackTrace()));
+//        } catch (Exception e) {
+//            System.out.println("My cought: " + Arrays.toString(e.getStackTrace()));
+//        }
+        ExceptionExamples exception = new ExceptionExamples();
+        exception.method1(123);
+
     }
 
     private static void printSomething(final String input) throws MyException {
@@ -82,5 +83,11 @@ public class ExceptionExamples {
         } else {
             System.out.println(input);
         }
+    }
+
+    private void method1(int arg) throws MyException {
+    }
+
+    private void method2(String arg) throws MyException{
     }
 }
