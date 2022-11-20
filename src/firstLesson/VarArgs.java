@@ -1,3 +1,5 @@
+package firstLesson;
+
 import java.util.Arrays;
 
 public class VarArgs {

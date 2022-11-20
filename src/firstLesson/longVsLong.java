@@ -1,3 +1,5 @@
+package firstLesson;
+
 public class longVsLong {
     public static void main(String[] args) {
         Long sum = 0L; //13s
