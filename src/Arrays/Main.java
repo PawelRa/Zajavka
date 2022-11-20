@@ -1,3 +1,8 @@
+package Arrays;
+
+import Arrays.Conditionals;
+import Arrays.OperatorsExamples;
+
 public class Main {
     public static void main(String[] args) {
 

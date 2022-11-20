@@ -1,3 +1,5 @@
+package Arrays;
+
 public class Conditionals {
     public static void loopYear(int year) {
         if ((year % 4 == 0) && (year % 100 != 0) || (year % 400 == 0)) {

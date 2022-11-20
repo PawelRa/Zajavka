@@ -1,3 +1,5 @@
+package Arrays;
+
 public class ArrayExercises {
     public static void main(String[] args) {
 //        System.out.println(reverseString("testowy tekst"));

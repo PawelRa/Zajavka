@@ -1,3 +1,5 @@
+package Arrays;
+
 public class OperatorsExamples {
 
     public static void doubleSum(double x, double y) {
