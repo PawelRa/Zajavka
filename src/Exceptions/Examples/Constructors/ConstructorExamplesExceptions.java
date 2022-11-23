@@ -17,13 +17,13 @@ public class ConstructorExamplesExceptions {
             Person person = new Person(1000);
         } catch (WrongAgeException e) {
 //            e.printStackTrace();
-            System.out.println("Błąd");
+            System.out.println("Błąd w ConstructorExamplesExceptions");
         }
 
-        try {
-            Person person = new Man(500);
-        } catch (WrongAgeException e) {
-            System.out.println("Men");;
-        }
+//        try {
+//            Person person = new Man(500);
+//        } catch (WrongAgeException e) {
+//            System.out.println("Men");;
+//        }
     }
 }
