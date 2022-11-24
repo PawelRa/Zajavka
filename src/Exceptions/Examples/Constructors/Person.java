@@ -11,6 +11,8 @@ public class Person {
                 throw new WrongAgeException("Block what is this dude?");
             } catch (WrongAgeException e) {
                 e.printStackTrace();
+            } catch (ExceptionInInitializerError err) {
+                System.out.println("Złpałem ERROR!");
             }
         } else {
             System.out.println("Valid age in init block");
